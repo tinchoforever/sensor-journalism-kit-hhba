@@ -1,0 +1,8 @@
+Pasos a Seguir para instalar librerias de Arduino:
+
+* Abrir el IDE de Arduino y hacer click en Sketch > Import Library… > Add Library
+* Se mostrará la pantalla donde debemos indicar la ruta del archivo .ZIP que contiene la librería de arduino. 
+* Elegimos el archivo ZIP que acabamos de bajar y damos click en “Select” o “Seleccionar”.
+
+Como Sabemos si se instalo correctamente la libreria:
+*  Nuvamente hacemos click en Sketch > Import Library y deberíamos ver la librería nueva en la parte baja del menú.
