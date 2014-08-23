@@ -1,0 +1,21 @@
+1) Que voy a lograr con este ejemplo:
+Este ejemplo me permitira medir la intencidad luminica del ambiente y enviarla por serial.
+
+2) Como conectar el Arduino para este ejemplo
+
+* El pin OUT del sensor debe ir en el pin 0 del Arduino
+
+-A su vez el pin VCC debe conectarse al pin de 5V del Arduino y el pin GND al pin de GND del arduino.
+
+3) Cambios basicos:
+
+- Para cambiar la velocidad de respuesta se puede cambiar el siguiente numero:
+	delay(100);		//Espera 100 milisegundos	
+
+	Incrementando el mismo, se obtendra una respuesta cada menos tiempo, si se lo quita la respuesta sera EXTREMADAMENTE rapida.
+
+
+
+
+
+
