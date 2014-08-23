@@ -1,0 +1,33 @@
+1) Que voy a lograr con este ejemplo:
+Este ejemplo de codigo me devolvera (al servidor en caso de estar conectado) la distancia obtenida por el ultrasonido en CM.
+
+A TENER EN CUENTA: El ultrasonido puede llegar a leer hasta 71cm y hasta unos 4cm con eficacia.
+
+2) Como conectar el Arduino para este ejemplo
+
+* El Ping del ultrasonido con el nombre de "Trig" debe ir en el pin 9.
+* El Ping del ultrasonido con el nombre de "Echo" debe ir en el pin 8.
+
+-A su vez el ping de "VCC" debe conectarse al pin de 5V del Arduino y el pin de "GND" al pin de GND del arduino.
+
+3) Cambios basicos:
+
+- Para cambiar la velocidad de respuesta se puede cambiar el siguiente numero:
+	delay(100);		//Espera 100 milisegundos	
+
+	Incrementando el mismo, se obtendra una respuesta cada menos tiempo, si se lo quita la respuesta sera EXTREMADAMENTE rapida.
+
+- Logica en el Arduino:
+	
+	En vez de enviar la distancia, podriamos enviar la distancia solo cuando esta en el rando que queremos
+	Ej:
+
+	if(ultrasonic.Ranging(CM) > 10 && ultrasonic.Ranging(CM) < 30){
+		Serial.print(ultrasonic.Ranging(CM));
+	}
+
+	El ejemplo se fija si la distancia es mayor a 10cm y menor a 30cm y envia la distancia obtenida.
+
+
+
+

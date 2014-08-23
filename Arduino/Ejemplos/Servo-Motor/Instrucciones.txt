@@ -1,0 +1,36 @@
+1) Que voy a lograr con este ejemplo:
+Este ejemplo me permitira mover un servo valiendose de un valor obtenido por un pulsador (puede ser otra cosa).
+
+A TENER EN CUENTA: El servo puede moverse de 0° a 180°
+
+2) Como conectar el Arduino para este ejemplo
+
+* El cable Amarillo/Naranja claro debe ir en el pin 9.
+* El potenciometro debe ir en el pin 0.
+
+-A su vez el cable Rojo debe conectarse al pin de 5V del Arduino y el cable Negro al pin de GND del arduino.
+
+* Uno de los cables del pulsador debe ir al pin 2
+
+- Y el otro cable debe ir al pin de 5V del Arduino
+
+3) Cambios basicos:
+
+- Para cambiar la velocidad de respuesta se puede cambiar el siguiente numero:
+	delay(1500);		//Espera 1500 milisegundos	
+
+	Incrementando el mismo, se obtendra una respuesta cada menos tiempo, si se lo quita la respuesta sera EXTREMADAMENTE rapida.
+
+- Mover el servo valiendose de otro input:
+	
+	Podemos mover el servo valiendose de lo recibido por el ultrasonido (Recomendable leer la instrucciones del ultrasonido)
+	EJ:
+
+	if(ultrasonic.Ranging(CM) > 0 && ultrasonic.Ranging(CM) < 180){
+		myservo.write(ultrasonic.Ranging(CM));
+	}
+
+
+
+
+
