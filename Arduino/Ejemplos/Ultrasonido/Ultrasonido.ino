@@ -9,6 +9,6 @@ void setup() {
 
 void loop()
 {
-  Serial.print(ultrasonic.Ranging(CM)); // Respuesta dek ultrasonido en CM 
+  Serial.println(ultrasonic.Ranging(CM)); // Respuesta dek ultrasonido en CM 
   delay(100);    //Espera 100 milisegundos
 }

@@ -23,11 +23,11 @@ void loop()
     if (buttonState == HIGH) {     
       // turn LED on:    
       myservo.write(180);    // Seteo el angulo al servo
-      Serial.print("pulsado");    //Envio por serial "pulsado"
+      Serial.println("pulsado");    //Envio por serial "pulsado"
     }else {
       // turn LED off:
       myservo.write(0);    // Seteo el angulo al servo
-      Serial.print("NO pulsado"); 
+      Serial.println("NO pulsado"); 
     }   
   } 
   delay(1500);                           // Espero 1500 milisegundos
