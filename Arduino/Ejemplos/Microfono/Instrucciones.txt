@@ -1,0 +1,17 @@
+1) Que voy a lograr con este ejemplo:
+Este ejemplo de codigo me devolvera (al servidor en caso de estar conectado) la intensidad del sonido obtenido por el microfono
+
+A TENER EN CUENTA: El microfono detecta un sonido ambiental inicial de al rededor de 33 puntos.
+
+2) Como conectar el Arduino para este ejemplo
+
+* El Ping del microfono con el nombre de "A0" debe ir en el pin ANALOGICO 0.
+
+-A su vez el ping de "+" debe conectarse al pin de 5V del Arduino y el pin de "G" al pin de GND del arduino.
+
+3) Cambios basicos:
+
+- Descomentar las lineas comentadas para solo enviar datos cuando el volumen es superior al base del microfono
+	if(soundReading > 34){
+	  Serial.println(soundReading);
+	}
