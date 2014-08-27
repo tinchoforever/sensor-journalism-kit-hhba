@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 /**
  * A simple theme for reveal.js presentations, similar
  * to the default theme. The accent color is darkblue.
@@ -7,6 +5,7 @@
  * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
  * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic|Oswald:300,400,700);
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -15,7 +14,7 @@ body {
   background-color: white; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", sans-serif;
   font-size: 36px;
   font-weight: normal;
   letter-spacing: -0.02em;
@@ -37,7 +36,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: black;
-  font-family: "News Cycle", Impact, sans-serif;
+  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif;
   line-height: 0.9em;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -136,3 +135,64 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: darkblue; }
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: black;
+  line-height: 0.9em;
+  letter-spacing: 0.02em;
+  text-shadow: none; }
+
+.reveal h1 {
+  max-width: 750px;
+  font-size: 2.3em;
+  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  letter-spacing: -1.2em;
+  text-align: left;
+  line-height: 1.055em !important;
+  padding-top: 20px; }
+
+h1.quote {
+  max-width: 100%;
+  font-size: 2em;
+  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  letter-spacing: -1.2em;
+  text-align: center; }
+
+h3 {
+  max-width: 100%;
+  font-size: 2.3em;
+  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  letter-spacing: -1.2em;
+  text-align: center;
+  line-height: 1.055em !important; }
+
+#posicion {
+  position: absolute;
+  bottom: 250px;
+  right: 0;
+  color: black; }
+  #posicion .numero {
+    text-align: center;
+    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 4.8em;
+    padding-right: 15px;
+    padding-bottom: 10px; }
+  #posicion .separador {
+    display: block;
+    width: 180px; }
+    #posicion .separador.parte-uno {
+      border-top: 5px solid #7c00ff; }
+  #posicion .leyenda {
+    font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 70%;
+    margin: 0 auto;
+    display: block; }

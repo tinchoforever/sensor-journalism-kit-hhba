@@ -1,0 +1,21 @@
+{
+  "name": "presentacion",
+  "version": "0.0.0",
+  "main": "public/css/main.css",
+  "homepage": "https://github.com/davo/frontend-ba",
+  "authors": [
+    "Davo <davidgalavotti@gmail.com>"
+  ],
+  "description": "Slides, demos y samples para la presentación del 27 de Mayo del primer Meetup Frontend Buenos Aires.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.0.2"
+  }
+}
