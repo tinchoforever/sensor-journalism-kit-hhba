@@ -1,0 +1,117 @@
+@import "../components/bourbon/dist/bourbon";
+@import "../components/UtilityBelt/utility-belt";
+
+@include font-face("Avenir Regular", "../fonts/AvenirNextLTPro-Regular");
+@include font-face("Avenir Bold", "../fonts/AvenirNextLTPro-Bold");
+@include font-face("Avenir Black", "../fonts/avenir-black");
+
+//== Fuentes por defecto
+//
+//## Avenir Heavy.
+
+$font-family-regular:      "Avenir Regular", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-bold:      "Avenir Bold", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-black:      "Avenir Black", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+//== Colores del sitio
+//
+//## Colores para el sensor de temperatura y humedad.
+
+$temperatura:                   #fae003;
+$humedad:                       #2dc7c2;
+
+//== Mixins
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+//== Resets
+
+* {
+    margin: 0;
+}
+
+*, *:after, *:before { box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+html, body {
+  height: 100%;
+}
+
+//== Estilos
+
+body {
+    font-family:                $font-family-regular;
+    font-size:                  2em;
+    -webkit-font-smoothing:     antialiased;
+}
+
+#temperatura {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $temperatura;
+    text-align: center;
+}
+
+.numero {
+    z-index: 2;
+    @include vertical-align();
+    width:                      auto;
+    font-family:                $font-family-black;
+    font-size:                  6em;
+    letter-spacing:             -.07em;
+    line-height:                .6em;
+    .valor {
+        // @include vertical-align();
+        display:                inline-block;
+    }
+    .simbolo {
+        @include transform(translateY(-70px));
+        font-size:              .5em;
+        display:                inline-block; 
+        font-family:            $font-family-bold;   
+    }
+}
+
+.referencia {
+    margin:                     0 auto;
+    width:                      250px;
+    font-family:                $font-family-bold;
+    font-size:                  .12em;
+    text-transform:             uppercase;
+    letter-spacing:             0em;
+    line-height:                3.5em;
+
+    border-top:                 10px solid black;
+
+}
+#chart {
+    z-index: 1;
+    position:                     absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+svg {
+  font-size: .3em;
+}
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 10px;
+  opacity: .5;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}

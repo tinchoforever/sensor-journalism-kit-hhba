@@ -1,0 +1,181 @@
+@charset "UTF-8";
+/*
+* UtilityBelt - a starter kit for any SASS project
+* By @dmtintner & @hackingui
+* Documentation and examples - hackingui.com/front-end/10-best-scss-utilities/
+* V1.1.0
+*/
+/*
+## Triangle
+* @include triangle within a pseudo element and add positioning properties (ie. top, left)
+* $direction: up, down, left, right
+*/
+/*
+* Currency
+*/
+/*
+* Clearfix
+*/
+/*
+* Respond To
+*/
+/*
+* Ghost Vertical Align
+*/
+/*
+* Truncate Text
+*/
+/*
+* Animation
+*/
+/*
+* Alerted
+*/
+@-webkit-keyframes alertMe {
+  from {
+    border-width: 3px;
+    border-color: gold; }
+
+  to {
+    border-width: 0;
+    border-color: rgba(255, 215, 0, 0.1); } }
+@-moz-keyframes alertMe {
+  from {
+    border-width: 3px;
+    border-color: gold; }
+
+  to {
+    border-width: 0;
+    border-color: rgba(255, 215, 0, 0.1); } }
+@keyframes alertMe {
+  from {
+    border-width: 3px;
+    border-color: gold; }
+
+  to {
+    border-width: 0;
+    border-color: rgba(255, 215, 0, 0.1); } }
+/*
+* Resize Sprite - for resizing only a single image from a sprite
+*
+* params: $map = $<name>-sprites (ex. $icon-sprites)
+*         $sprite = file name w/o file type ending (ex. globe)
+          $percent = number (ex. 50)
+*
+* (if compass CSS3 mixins not included, uncomment the background-size row and comment the @include version)
+*/
+/*
+* Resizes all images in a given sprite
+* mixin courtesy of Wilker Lúcio https://gist.github.com/wilkerlucio/6442309
+* params: $only = if you want to list specific files instead of regenerating every image (ex. globe, checkmark)
+*/
+/*
+* HUI Tooltips
+*/
+/*
+## Text-align justify
+For perfectly aligned grids that don't rely on floating elements and difficult calculations
+
+- http://www.barrelny.com/blog/text-align-justify-and-rwd/ */
+@font-face {
+  font-family: "Avenir Regular";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/AvenirNextLTPro-Regular.eot");
+  src: url("../fonts/AvenirNextLTPro-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../fonts/AvenirNextLTPro-Regular.ttf") format("truetype"), url("../fonts/AvenirNextLTPro-Regular.svg#Avenir Regular") format("svg"); }
+@font-face {
+  font-family: "Avenir Bold";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/AvenirNextLTPro-Bold.eot");
+  src: url("../fonts/AvenirNextLTPro-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../fonts/AvenirNextLTPro-Bold.ttf") format("truetype"), url("../fonts/AvenirNextLTPro-Bold.svg#Avenir Bold") format("svg"); }
+@font-face {
+  font-family: "Avenir Black";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/avenir-black.eot");
+  src: url("../fonts/avenir-black.eot?#iefix") format("embedded-opentype"), url("../fonts/avenir-black.woff") format("woff"), url("../fonts/avenir-black.ttf") format("truetype"), url("../fonts/avenir-black.svg#Avenir Black") format("svg"); }
+* {
+  margin: 0; }
+
+*, *:after, *:before {
+  box-sizing: border-box; }
+
+.clearfix:before, .clearfix:after {
+  content: '';
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+html, body {
+  height: 100%; }
+
+body {
+  font-family: "Avenir Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  -webkit-font-smoothing: antialiased; }
+
+#temperatura {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fae003;
+  text-align: center; }
+
+.numero {
+  z-index: 2;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: auto;
+  font-family: "Avenir Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 6em;
+  letter-spacing: -.07em;
+  line-height: .6em; }
+  .numero .valor {
+    display: inline-block; }
+  .numero .simbolo {
+    -webkit-transform: translateY(-70px);
+    -moz-transform: translateY(-70px);
+    -ms-transform: translateY(-70px);
+    -o-transform: translateY(-70px);
+    transform: translateY(-70px);
+    font-size: .5em;
+    display: inline-block;
+    font-family: "Avenir Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.referencia {
+  margin: 0 auto;
+  width: 250px;
+  font-family: "Avenir Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .12em;
+  text-transform: uppercase;
+  letter-spacing: 0em;
+  line-height: 3.5em;
+  border-top: 10px solid black; }
+
+#chart {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+svg {
+  font-size: .3em; }
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 10px;
+  opacity: .5; }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges; }
