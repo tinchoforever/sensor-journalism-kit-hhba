@@ -9,7 +9,7 @@ void setup(void) {
 void loop(void) {
   photocellReading = analogRead(photocellPin);     //Realiza la medicion
  
-  Serial.println(photocellReading);        //Envia la medicion
+  Serial.print(photocellReading);        //Envia la medicion
   
   delay(1000);		//Espera 100 milisegundos
 }

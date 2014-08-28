@@ -57,7 +57,7 @@
   serialPort.on("open", function() {
       console.log('Arudino online!');
       serialPort.on('data', function(data) {
-          
+          console.log(data.toString());
         //Que valor vas a medir? Controlalo y despues guardalo :-o
           var messureValue =  parseFloat(data);
           if (messureValue) {
