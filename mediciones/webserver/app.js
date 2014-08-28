@@ -65,15 +65,17 @@
 
           var messureValue =  parseFloat(data);
           if (messureValue) {
+            if (messureValue < 100) {
+              messureValue *= 10;
+            }
             var obj = {};
             obj.value = messureValue;
             var messureModel = new messure(obj);
             messureModel.save();
-            console.log('midiendo' , messureValue);
+          } else {
+            console.log(messureValue);
           }
-          else{
-            console.log('sin datos')
-          }
+          
 
       });
   });

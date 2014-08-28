@@ -3,9 +3,9 @@
   'use strict';
 
 
-  var margin = 20,
-  width = parseInt(d3.select("#chart").style("width")) - margin*2,
-  height = parseInt(d3.select("#chart").style("height")) - margin*2;
+  var margin = 30,
+  width = parseInt(d3.select("#chart").style("width")) - margin * 2,
+  height = parseInt(d3.select("#chart").style("height")) - margin * 2;
   
   var data = [];
 
@@ -18,9 +18,7 @@
       callback();
     });
   }
-  
-  //loadData(); 
-
+   
   var n = 30,
   random = d3.random.normal(0, .1);
 
@@ -88,17 +86,36 @@
     loadData(function (dataJson) {
       // redraw the line, and slide it to the left
       
-      path
-      .attr("d", line)
-      .attr("transform", null)
-      .transition()
-      .duration(3100)
-      .ease("linear")
-      .attr("transform", "translate(" + x(0) + ",0)")
-      .each("end", tick);
-      d3.select(".valor").datum(data[data.length -1]).html(function d(temperature) {
-        return temperature;
-      });
+      // var translate = (15 * data.length );
+      
+      // path
+      // .attr("d", line)
+      // .attr("transform", null)
+      // .transition()
+      // .duration(150)
+      // .ease("linear")
+      // .attr("transform", "translate(" +  translate + ",0)")
+      // .each("end", tick);
+      // d3.select(".valor").datum(data[data.length -1]).html(function d(messure) {
+      //   return messure;
+      // });
+      
+       // push a new data point onto the back
+      data.push(data[data.length -1]);
+
+      // pop the old data point off the front
+      data.shift();
+
+      // transition the line
+      path.transition()
+          .duration(1550)
+          .ease("linear")
+          .attr("d", line)
+          .each("end", function() { tick(path, line, data); });
+          
+      d3.select(".valor").datum(data[data.length -1]).html(function d(messure) {
+         return messure;
+       });
 
     // pop the old data point off the front
     

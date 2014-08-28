@@ -1,4 +1,4 @@
-int photocellPin = 0;     //Pin al cual ponectamos el sensor de luz
+int photocellPin = 5;     //Pin al cual ponectamos el sensor de luz
 int photocellReading; 
 
 void setup(void) {
@@ -11,5 +11,5 @@ void loop(void) {
  
   Serial.println(photocellReading);        //Envia la medicion
   
-  delay(100);		//Espera 100 milisegundos
+  delay(1000);		//Espera 100 milisegundos
 }
