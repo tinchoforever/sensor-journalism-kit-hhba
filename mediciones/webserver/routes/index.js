@@ -12,8 +12,5 @@ module.exports.init = function (app) {
   Routes.home = require('./app/home');
   app.get('/', Routes.home);
   // API Prefix
-  // var ApiPrefix = '/api/v1/';
-  // Routes.homeAPI = require('./api/home');
-  // app.get(ApiPrefix, Routes.homeAPI);
   
 };

@@ -32,6 +32,19 @@
   server.listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
   });
+
+  //API 
+   var ApiPrefix = '/api/v1/';
+   var lastMeasure = {
+    value: 0,
+    created: Date.now() 
+   };
+   var homeAPI =  function (req, res) {
+
+       res.send(lastMeasure, 200);
+   };
+   app.get(ApiPrefix, homeAPI);
+  
   
 
 
@@ -45,16 +58,16 @@
       console.log('Arudino online!');
       serialPort.on('data', function(data) {
           
-
+        //Que valor vas a medir? Controlalo y despues guardalo :-o
           var messureValue =  parseFloat(data);
           if (messureValue) {
             if (messureValue < 100) {
               messureValue *= 10;
             }
-            var obj = {};
-            obj.value = messureValue;
-            var messureModel = new messure(obj);
-            messureModel.save();
+            lastMeasure = {
+              value: messureValue,
+              created: Date.now() 
+            };
           } else {
             console.log(messureValue);
           }
