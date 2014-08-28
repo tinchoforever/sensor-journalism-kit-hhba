@@ -5,9 +5,9 @@
   var express = require('express'),
       router = require('./routes'),
       http = require('http'),
-      mongo = require('./models/mongo-core'),
-      path = require('path'),
-      messure = require('./models/messure');
+//      mongo = require('./models/mongo-core'),
+      path = require('path');
+      // messure = require('./models/messure');
 
   var app = express();
   
@@ -33,29 +33,12 @@
     console.log('Express server listening on port ' + app.get('port'));
   });
   
-  var io = require('socket.io').listen(server);
-  if (process.env.NODE_ENV ==='production'){
-    //For Heroku
-    io.configure(function () {
-        io.set("transports", ["xhr-polling"]);
-        io.set("polling duration", 10);
-        io.set("log level", 1);
-    });
-  }
-
-  var mainSocket = {};
-  io.sockets.on('connection', function(socket) {
-    mainSocket = socket;
-
-    socket.on('movie-item', function(msg) {
-         console.log("movie-item", msg);
-         socket.broadcast.emit("new-item", msg);
-    });
-  });
 
 
-  var SerialPort = require("serialport").SerialPort
-  var serialPort = new SerialPort("/dev/cu.usbmodemfa141", {
+  var SerialPort = require("serialport").SerialPort;
+  //Reemplazalo con el tuyo :)
+  var port = "/dev/cu.usbmodemfa141";
+  var serialPort = new SerialPort(port, {
       baudrate: 9600
   });
   serialPort.on("open", function() {
