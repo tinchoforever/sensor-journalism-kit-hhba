@@ -9,7 +9,8 @@ Reveal.initialize({
     progress: false,
     history: true,
     center: false,
-
+    width: 1400,
+    height: 700,
     theme: 'simple', // available themes are in /css/theme
     transition: 'fade', // default/cube/page/concave/zoom/linear/fade/none
 
