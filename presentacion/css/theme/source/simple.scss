@@ -89,10 +89,17 @@ h1.quote {
     // text-transform: none !important;
 }
 h3 {
-    font-size: 2.3em;
+    font-size: 3em;
     font-family: $headingFont !important;
     letter-spacing: -1.2em;
     line-height: 1.055em !important;
+}
+
+h4 {
+    font-size: 2.9em;
+    font-family: $headingFont !important;
+    letter-spacing: -1em;
+    line-height: 1.075em !important;
 }
 
 .objetivo {

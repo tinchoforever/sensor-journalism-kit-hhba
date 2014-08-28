@@ -94,6 +94,22 @@ Reveal.addEventListener('slidechanged', function(event) {
                 ease: Power1.easeInOut
             }, .2);
         }
+        if (tag == "h4"){
+            var contentOpenData = $(event.currentSlide.children[i]);
+
+            contentSplit = new SplitText(contentOpenData, {
+                type: "lines"
+            });
+
+            TweenLite.set(contentOpenData, {
+                perspective: 700
+            });
+            tl.staggerFrom(contentSplit.lines, .75, {
+                autoAlpha: 0,
+                x: -50,
+                ease: Power1.easeInOut
+            }, .2);
+        }
         
         if (tag == "ul"){
             for (var p = 0; p < event.currentSlide.children[i].children.length ; p++){
