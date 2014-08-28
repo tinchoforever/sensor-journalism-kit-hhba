@@ -46,24 +46,39 @@
    app.get(ApiPrefix, homeAPI);
   
   
+// NodeJS includes
+var sys = require('sys');
+var fs = require('fs');
+var id = '';
 
+fs.createReadStream('/dev/cu.usbmodemfa141', { bufferSize: 1 })
 
-  var SerialPort = require("serialport").SerialPort;
-  //Reemplazalo con el tuyo :)
-  var port = "/dev/cu.usbmodemfa141";
-  var serialPort = new SerialPort(port, {
-      baudrate: 9600
-  });
-  serialPort.on("open", function() {
-      console.log('Arudino online!');
-      serialPort.on('data', function(data) {
-          console.log(data.toString());
-        //Que valor vas a medir? Controlalo y despues guardalo :-o
-          var messureValue =  parseFloat(data);
+.on('open', function(fd) {
+  sys.puts('Begin scanning');
+})
+
+.on('end', function() {
+  sys.puts('End of data stream.');
+})
+
+.on('close', function() {
+  sys.puts('Closing stream.');
+})
+
+.on('error', function(error) {
+  sys.debug(error);
+})
+
+.on('data', function(chunk) {
+  chunk = chunk.toString('ascii').match(/\w*/)[0]; // Only keep hex chars
+  if ( chunk.length == 0 ) { // Found non-hex char
+    if ( id.length > 0 ) { 
+      //Que valor vas a medir? Controlalo y despues guardalo :-o
+          var messureValue =  parseFloat(id);
           if (messureValue) {
-            if (messureValue < 100) {
-              messureValue *= 10;
-            }
+            // if (messureValue < 100) {
+            //   messureValue *= 10;
+            // }
             lastMeasure = {
               value: messureValue,
               created: Date.now() 
@@ -71,11 +86,13 @@
           } else {
             console.log(messureValue);
           }
-          
-
-      });
-  });
-    
+      sys.puts(id);
+    }
+    id = ''; // Prepare for the next ID read
+    return;
+  }
+  id += chunk; // Concat hex chars to the forming ID
+});
     
     
   process.on('SIGTERM', function () {

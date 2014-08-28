@@ -7,7 +7,10 @@ void setup(){
 
 void loop(){
  soundReading=analogRead(soundSensorPin);
+ 
  //if(soundReading > 34){
-   Serial.println(soundReading);
+   Serial.println(soundReading * 100);
+   
+     delay(1000);		//Espera 100 milisegundos
  //}
 }
