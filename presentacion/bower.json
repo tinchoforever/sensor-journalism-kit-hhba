@@ -2,11 +2,12 @@
   "name": "presentacion",
   "version": "0.0.0",
   "main": "public/css/main.css",
-  "homepage": "https://github.com/davo/frontend-ba",
+  "homepage": "https://github.com/tinchoforever/sensor-journalism-kit-hhba",
   "authors": [
-    "Davo <davidgalavotti@gmail.com>"
+    "Davo <davidgalavotti@gmail.com>",
+    "Tincho <tinchoforever@gmail.com>"
   ],
-  "description": "Slides, demos y samples para la presentación del 27 de Mayo del primer Meetup Frontend Buenos Aires.",
+  "description": "HHBA Media Party 2014 - Sensor Journalism Bootcamp",
   "license": "MIT",
   "ignore": [
     "**/.*",
