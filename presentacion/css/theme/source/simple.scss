@@ -14,11 +14,21 @@
 
 @import "../../../bower_components/bourbon/dist/bourbon";
 
+// Colores
+// 
+$sensores: #7c00ff;
+
+$white: #F8F8F8;
+$blue: #007EE5;
+$grey: #7B8994;
+$lightGrey: #A3ABAE;
+
 
 // Include theme-specific fonts
 
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic|Oswald:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic|Oswald:300,400,700|Inconsolata:400,700);
 
+// font-family: 'Inconsolata', sans-serif;
 // font-family: 'Source Sans Pro', sans-serif;
 // font-family: 'Oswald', sans-serif;
 
@@ -29,16 +39,13 @@ $headingFont: 'Oswald', 'Helvetica Neue', 'Helvetica', sans-serif;
 $headingColor: #000;
 $headingTextShadow: none;
 $headingTextTransform: none;
-$backgroundColor: #fff;
+$backgroundColor: $white;
 $linkColor: #00008B;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: rgba(0, 0, 0, 0.99);
 
-$sensores: #7c00ff;
 
-// Theme template ------------------------------
-@import "../template/theme";
-// ---------------------------------------------
+
 
 .reveal h1,
 .reveal h2,
@@ -50,17 +57,28 @@ $sensores: #7c00ff;
     color: $headingColor;
     line-height: $headingLineHeight;
     letter-spacing: $headingLetterSpacing;
-    text-shadow: $headingTextShadow;
+    text-shadow: none !important;
 }
 
 .reveal h1 {
-    max-width: 750px;
-    font-size: 2.3em;
+    max-width: 100%;
+    font-size: 3em;
+    font-weight: 700;
     font-family: $headingFont !important;
     letter-spacing: -1.2em;
-    text-align: left;
+    text-align: center;
     line-height: 1.055em !important;
     padding-top: 20px;
+    text-transform: uppercase !important;
+}
+h1.claim {
+    max-width: 100%;
+    font-size: 2.5em;
+    font-weight: 400;
+    font-family: $headingFont !important;
+    letter-spacing: -1.2em;
+    text-align: center;
+    // text-transform: none !important;
 }
 h1.quote {
     max-width: 100%;
@@ -71,12 +89,18 @@ h1.quote {
     // text-transform: none !important;
 }
 h3 {
-    max-width: 100%;
     font-size: 2.3em;
     font-family: $headingFont !important;
     letter-spacing: -1.2em;
-    text-align: center;
     line-height: 1.055em !important;
+}
+
+.objetivo {
+	position: absolute;
+	top: -250px;
+	right: -230px;
+	text-align: right;
+	// border: 1px solid red !important;
 }
 
 #posicion {
@@ -109,3 +133,7 @@ h3 {
         display: block;
     }
 }
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------

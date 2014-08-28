@@ -30,11 +30,6 @@ Reveal.initialize({
 
 Reveal.addEventListener('inicio', function(event) {
 
-
-    $(".labs").html("");
-    var creative = $('#creative-content');
-    var tl1 = new TimelineMax();
-    tl1.to(creative, 0.4, { opacity: 1 });
     var tl2 = new TimelineMax();
     tl2.to(posicion, 0.4, { opacity: 0 });
 }, false);
@@ -51,6 +46,40 @@ Reveal.addEventListener('slidechanged', function(event) {
             var contentOpenData = $(event.currentSlide.children[i]);
 
             contentSplit = new SplitText(contentOpenData, {
+                type: "lines"
+            });
+
+            TweenLite.set(contentOpenData, {
+                perspective: 700
+            });
+            tl.staggerFrom(contentSplit.lines, .8, {
+                autoAlpha: 0,
+                x: 50,
+                scaleX: 2,
+                // rotationX: -180,
+                // transformOrigin: "50% center 0",
+                ease: Power2.easeInOut
+            }, .2);
+        }
+        if (tag == "span"){
+            var contentOpenData = $(event.currentSlide.children[i]);
+
+            TweenLite.set(contentOpenData, {
+                perspective: 700
+            });
+
+            tl.from(contentOpenData, 1.2, {
+
+                autoAlpha: 0,
+                x: -500,
+                ease: Power1.easeInOut
+
+            })
+        }
+        if (tag == "h3"){
+            var contentOpenData = $(event.currentSlide.children[i]);
+
+            contentSplit = new SplitText(contentOpenData, {
                 type: "words"
             });
 
@@ -59,12 +88,13 @@ Reveal.addEventListener('slidechanged', function(event) {
             });
             tl.staggerFrom(contentSplit.words, .75, {
                 autoAlpha: 0,
-                x: 100,
-                rotationY: -100,
-                transformOrigin: "50% top -250",
+                x: -50,
+                // rotationY: -100,
+                // transformOrigin: "50% bottom -250",
                 ease: Power1.easeInOut
-            }, 0.2);
+            }, .2);
         }
+        
         if (tag == "ul"){
             for (var p = 0; p < event.currentSlide.children[i].children.length ; p++){
 

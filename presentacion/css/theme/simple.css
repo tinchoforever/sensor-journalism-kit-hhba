@@ -5,13 +5,88 @@
  * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
  * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic|Oswald:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic|Oswald:300,400,700|Inconsolata:400,700);
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: black;
+  line-height: 0.9em;
+  letter-spacing: 0.02em;
+  text-shadow: none !important; }
+
+.reveal h1 {
+  max-width: 100%;
+  font-size: 3em;
+  font-weight: 700;
+  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  letter-spacing: -1.2em;
+  text-align: center;
+  line-height: 1.055em !important;
+  padding-top: 20px;
+  text-transform: uppercase !important; }
+
+h1.claim {
+  max-width: 100%;
+  font-size: 2.5em;
+  font-weight: 400;
+  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  letter-spacing: -1.2em;
+  text-align: center; }
+
+h1.quote {
+  max-width: 100%;
+  font-size: 2em;
+  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  letter-spacing: -1.2em;
+  text-align: center; }
+
+h3 {
+  font-size: 2.3em;
+  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  letter-spacing: -1.2em;
+  line-height: 1.055em !important; }
+
+.objetivo {
+  position: absolute;
+  top: -250px;
+  right: -230px;
+  text-align: right; }
+
+#posicion {
+  position: absolute;
+  bottom: 250px;
+  right: 0;
+  color: black; }
+  #posicion .numero {
+    text-align: center;
+    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 4.8em;
+    padding-right: 15px;
+    padding-bottom: 10px; }
+  #posicion .separador {
+    display: block;
+    width: 180px; }
+    #posicion .separador.parte-uno {
+      border-top: 5px solid #7c00ff; }
+  #posicion .leyenda {
+    font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 70%;
+    margin: 0 auto;
+    display: block; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: white;
-  background-color: white; }
+  background: #f8f8f8;
+  background-color: #f8f8f8; }
 
 .reveal {
   font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", sans-serif;
@@ -135,64 +210,3 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: darkblue; }
-
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-  margin: 0 0 20px 0;
-  color: black;
-  line-height: 0.9em;
-  letter-spacing: 0.02em;
-  text-shadow: none; }
-
-.reveal h1 {
-  max-width: 750px;
-  font-size: 2.3em;
-  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
-  letter-spacing: -1.2em;
-  text-align: left;
-  line-height: 1.055em !important;
-  padding-top: 20px; }
-
-h1.quote {
-  max-width: 100%;
-  font-size: 2em;
-  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
-  letter-spacing: -1.2em;
-  text-align: center; }
-
-h3 {
-  max-width: 100%;
-  font-size: 2.3em;
-  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
-  letter-spacing: -1.2em;
-  text-align: center;
-  line-height: 1.055em !important; }
-
-#posicion {
-  position: absolute;
-  bottom: 250px;
-  right: 0;
-  color: black; }
-  #posicion .numero {
-    text-align: center;
-    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", sans-serif;
-    font-size: 4.8em;
-    padding-right: 15px;
-    padding-bottom: 10px; }
-  #posicion .separador {
-    display: block;
-    width: 180px; }
-    #posicion .separador.parte-uno {
-      border-top: 5px solid #7c00ff; }
-  #posicion .leyenda {
-    font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 70%;
-    margin: 0 auto;
-    display: block; }

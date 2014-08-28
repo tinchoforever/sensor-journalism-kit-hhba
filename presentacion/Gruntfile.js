@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 		sass: {
 			main: {
 				files: {
-					'css/theme/simple.css': 'css/theme/source/simple.scss',
+					'css/theme/simple.css': 'css/theme/source/simple.scss'
 				}
 			}
 		},
@@ -76,18 +76,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
-		zip: {
-			'reveal-js-presentation.zip': [
-				'index.html',
-				'css/**',
-				'js/**',
-				'lib/**',
-				'images/**',
-				'plugin/**'
-			]
-		},
-
 		watch: {
 			main: {
 				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
@@ -112,7 +100,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
-	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify', 'qunit' ] );
+	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify'] );
 
 	// Theme task
 	grunt.registerTask( 'themes', [ 'sass' ] );
