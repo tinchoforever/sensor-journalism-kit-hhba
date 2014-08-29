@@ -1,11 +1,33 @@
-/**
- * A simple theme for reveal.js presentations, similar
- * to the default theme. The accent color is darkblue.
- *
- * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
- * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
- */
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic|Oswald:300,400,700|Inconsolata:400,700);
+@font-face {
+  font-family: "Typsansmono Light";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../../lib/font/typsansmono-light.eot");
+  src: url("../../lib/font/typsansmono-light.eot?#iefix") format("embedded-opentype"), url("../../lib/font/typsansmono-light.woff") format("woff"), url("../../lib/font/typsansmono-light.ttf") format("truetype"), url("../../lib/font/typsansmono-light.svg#Typsansmono Light") format("svg"); }
+@font-face {
+  font-family: "Typsansmono Regular";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../../lib/font/typsansmono-regular.eot");
+  src: url("../../lib/font/typsansmono-regular.eot?#iefix") format("embedded-opentype"), url("../../lib/font/typsansmono-regular.woff") format("woff"), url("../../lib/font/typsansmono-regular.ttf") format("truetype"), url("../../lib/font/typsansmono-regular.svg#Typsansmono Regular") format("svg"); }
+@font-face {
+  font-family: "Typsansmono Text";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../../lib/font/typsansmono-text.eot");
+  src: url("../../lib/font/typsansmono-text.eot?#iefix") format("embedded-opentype"), url("../../lib/font/typsansmono-text.woff") format("woff"), url("../../lib/font/typsansmono-text.ttf") format("truetype"), url("../../lib/font/typsansmono-text.svg#Typsansmono Text") format("svg"); }
+@font-face {
+  font-family: "Typsansmono Medium";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../../lib/font/typsansmono-medium.eot");
+  src: url("../../lib/font/typsansmono-medium.eot?#iefix") format("embedded-opentype"), url("../../lib/font/typsansmono-medium.woff") format("woff"), url("../../lib/font/typsansmono-medium.ttf") format("truetype"), url("../../lib/font/typsansmono-medium.svg#Typsansmono Medium") format("svg"); }
+@font-face {
+  font-family: "Typsansmono Bold";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../../lib/font/typsansmono-bold.eot");
+  src: url("../../lib/font/typsansmono-bold.eot?#iefix") format("embedded-opentype"), url("../../lib/font/typsansmono-bold.woff") format("woff"), url("../../lib/font/typsansmono-bold.ttf") format("truetype"), url("../../lib/font/typsansmono-bold.svg#Typsansmono Bold") format("svg"); }
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -22,7 +44,7 @@
   max-width: 100%;
   font-size: 3em;
   font-weight: 700;
-  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  font-family: "Typsansmono Light", "Helvetica Neue", "Helvetica", sans-serif !important;
   letter-spacing: -1.2em;
   text-align: center;
   line-height: 1.055em !important;
@@ -33,29 +55,72 @@ h1.claim {
   max-width: 100%;
   font-size: 2.5em;
   font-weight: 400;
-  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  font-family: "Typsansmono Light", "Helvetica Neue", "Helvetica", sans-serif !important;
   letter-spacing: -1.2em;
   text-align: center; }
+
+.invertido {
+  color: white !important;
+  text-transform: none !important; }
 
 h1.quote {
   max-width: 100%;
   font-size: 2em;
-  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  font-family: "Typsansmono Light", "Helvetica Neue", "Helvetica", sans-serif !important;
   letter-spacing: -1.2em;
   text-align: center; }
 
 h3 {
   font-size: 2em;
-  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  font-family: "Typsansmono Light", "Helvetica Neue", "Helvetica", sans-serif !important;
   letter-spacing: -1.2em;
   line-height: 1.055em !important; }
 
-h4 {
+h4.quote {
   max-width: 100%;
-  font-size: 2.2em !important;
-  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif !important;
+  font-size: 1.4em !important;
+  font-family: "Typsansmono Light", "Helvetica Neue", "Helvetica", sans-serif !important;
   letter-spacing: -1em;
-  line-height: 1.075em !important; }
+  line-height: 1.02em !important;
+  color: #444 !important; }
+
+.highlight {
+  background-color: black !important;
+  color: white !important; }
+
+.author {
+  display: block; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  ul li {
+    display: block;
+    margin: 0px;
+    float: left; }
+
+ul.us li {
+  padding: 10px; }
+ul.us img {
+  border: none !important;
+  border-top-left-radius: 250px;
+  border-top-right-radius: 250px;
+  border-bottom-left-radius: 250px;
+  border-bottom-right-radius: 250px;
+  border-top-left-radius: 250px;
+  border-bottom-left-radius: 250px;
+  border-top-right-radius: 250px;
+  border-bottom-right-radius: 250px; }
+ul.us p {
+  text-align: center; }
+
+ul.company li {
+  padding: 10px; }
+
+img {
+  border: none !important;
+  box-shadow: none !important; }
 
 .objetivo {
   position: absolute;
@@ -70,7 +135,7 @@ h4 {
   color: black; }
   #posicion .numero {
     text-align: center;
-    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Typsansmono Regular", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 4.8em;
     padding-right: 15px;
     padding-bottom: 10px; }
@@ -80,7 +145,7 @@ h4 {
     #posicion .separador.parte-uno {
       border-top: 5px solid #7c00ff; }
   #posicion .leyenda {
-    font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Typsansmono Light", "Helvetica Neue", "Helvetica", sans-serif;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -92,11 +157,11 @@ h4 {
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #f8f8f8;
-  background-color: #f8f8f8; }
+  background: white;
+  background-color: white; }
 
 .reveal {
-  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "Typsansmono Regular", "Helvetica Neue", "Helvetica", sans-serif;
   font-size: 36px;
   font-weight: normal;
   letter-spacing: -0.02em;
@@ -118,7 +183,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: black;
-  font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "Typsansmono Light", "Helvetica Neue", "Helvetica", sans-serif;
   line-height: 0.9em;
   letter-spacing: 0.02em;
   text-transform: none;

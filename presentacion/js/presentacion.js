@@ -8,7 +8,7 @@ Reveal.initialize({
     controls: true,
     progress: false,
     history: true,
-    center: false,
+    center: true,
     width: 1200,
     height: 600,
     theme: 'simple', // available themes are in /css/theme
@@ -43,6 +43,7 @@ Reveal.addEventListener('slidechanged', function(event) {
 
     for (var i = 0; i < event.currentSlide.children.length ; i++){
         var tag = event.currentSlide.children[i].localName;
+        
         if (tag == "h1"){
             var contentOpenData = $(event.currentSlide.children[i]);
 
@@ -55,8 +56,8 @@ Reveal.addEventListener('slidechanged', function(event) {
             });
             tl.staggerFrom(contentSplit.lines, .8, {
                 autoAlpha: 0,
-                x: 50,
-                scaleX: 2,
+                x: 100,
+                // scaleX: 2,
                 // rotationX: -180,
                 // transformOrigin: "50% center 0",
                 ease: Power2.easeInOut
@@ -76,6 +77,24 @@ Reveal.addEventListener('slidechanged', function(event) {
                 ease: Power1.easeInOut
 
             })
+        }
+        if (tag == "h2"){
+            var contentOpenData = $(event.currentSlide.children[i]);
+
+            contentSplit = new SplitText(contentOpenData, {
+                type: "words"
+            });
+
+            TweenLite.set(contentOpenData, {
+                perspective: 700
+            });
+            tl.staggerFrom(contentSplit.words, .75, {
+                autoAlpha: 0,
+                x: -50,
+                // rotationY: -100,
+                // transformOrigin: "50% bottom -250",
+                ease: Power1.easeInOut
+            }, .2);
         }
         if (tag == "h3"){
             var contentOpenData = $(event.currentSlide.children[i]);
@@ -117,13 +136,14 @@ Reveal.addEventListener('slidechanged', function(event) {
 
                 var contentOpenData = $(event.currentSlide.children[i].children[p]);
 
-                tl.staggerFrom(contentOpenData, 0.75, {
+                tl.staggerFrom(contentOpenData, 0.5, {
                     autoAlpha: 0,
-                    x: (Math.random() * 200) + 500,
-                    rotationZ: 45,
-                    rotationX: 180/2,
+                    // x: (Math.random() * 200) + 500,
+                    // rotationZ: 45,
+                    rotationY: 180/2,
+                    transformOrigin: "50% center 0",
                     ease: Power1.easeInOut
-                }, -1.05);
+                }, .4);
 
             }
         }

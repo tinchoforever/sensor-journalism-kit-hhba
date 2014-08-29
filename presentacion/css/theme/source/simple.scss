@@ -1,11 +1,3 @@
-/**
- * A simple theme for reveal.js presentations, similar
- * to the default theme. The accent color is darkblue.
- *
- * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
- * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
- */
-
 // Checkear Arduino fonts. 
 // http://arduino.cc/fonts/fonts.css
 
@@ -16,11 +8,12 @@
 
 @import "../../../bower_components/bourbon/dist/bourbon";
 
+
 // Colores
 // 
 $sensores: #7c00ff;
 
-$white: #F8F8F8;
+$white: #fff;
 $blue: #007EE5;
 $grey: #7B8994;
 $lightGrey: #A3ABAE;
@@ -28,16 +21,30 @@ $lightGrey: #A3ABAE;
 
 // Include theme-specific fonts
 
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic|Oswald:300,400,700|Inconsolata:400,700);
+//@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic|Oswald:300,400,700|Inconsolata:400,700);
+
+@include font-face('Typsansmono Light', '../../lib/font/typsansmono-light');
+@include font-face('Typsansmono Regular', '../../lib/font/typsansmono-regular');
+@include font-face('Typsansmono Text', '../../lib/font/typsansmono-text');
+@include font-face('Typsansmono Medium', '../../lib/font/typsansmono-medium');
+@include font-face('Typsansmono Bold', '../../lib/font/typsansmono-bold');
+
+
+
+// typoninesanspro-light
+// typoninesanspro-regular
+// typoninesanspro-text
+// typoninesanspro-medium
+// typoninesanspro-bold
 
 // font-family: 'Inconsolata', sans-serif;
 // font-family: 'Source Sans Pro', sans-serif;
 // font-family: 'Oswald', sans-serif;
 
 // Override theme settings (see ../template/settings.scss)
-$mainFont: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', sans-serif;
+$mainFont: 'Typsansmono Regular', 'Helvetica Neue', 'Helvetica', sans-serif;
 $mainColor: #000;
-$headingFont: 'Oswald', 'Helvetica Neue', 'Helvetica', sans-serif;
+$headingFont: 'Typsansmono Light', 'Helvetica Neue', 'Helvetica', sans-serif;
 $headingColor: #000;
 $headingTextShadow: none;
 $headingTextTransform: none;
@@ -82,6 +89,12 @@ h1.claim {
     text-align: center;
     // text-transform: none !important;
 }
+
+.invertido {
+    color: $white !important;
+    text-transform: none !important;
+}
+
 h1.quote {
     max-width: 100%;
     font-size: 2em;
@@ -97,13 +110,71 @@ h3 {
     line-height: 1.055em !important;
 }
 
-h4 {
+h4.quote {
 	max-width: 100%;
-    font-size: 2.2em !important;
+    font-size: 1.4em !important;
     font-family: $headingFont !important;
     letter-spacing: -1em;
-    line-height: 1.075em !important;
+    line-height: 1.02em !important;
+    color: #444 !important;
 }
+
+
+.highlight {
+    background-color: black !important;
+    color: $white !important;
+}
+
+.author {
+    display: block;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: block;
+        margin: 0px;
+        float: left;
+    }
+
+}
+
+ul.us {
+
+    li {
+        padding: 10px;
+    }
+
+    img {
+        border: none !important;
+        @include border-top-radius(250px);
+        @include border-bottom-radius(250px);
+        @include border-left-radius(250px);
+        @include border-right-radius(250px);
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+ul.company {
+
+    li {
+        padding: 10px;
+    }
+}
+
+
+img {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
 
 .objetivo {
 	position: absolute;
