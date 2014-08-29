@@ -5,9 +5,9 @@
   var express = require('express'),
       router = require('./routes'),
       http = require('http'),
-      mongo = require('./models/mongo-core'),
-      path = require('path'),
-      messure = require('./models/messure');
+//      mongo = require('./models/mongo-core'),
+      path = require('path');
+      // messure = require('./models/messure');
 
   var app = express();
   
@@ -32,52 +32,49 @@
   server.listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
   });
+
+  //API 
+   var ApiPrefix = '/api/v1/';
+   var lastMeasure = {
+    value: 0,
+    created: Date.now() 
+   };
+   var homeAPI =  function (req, res) {
+
+       res.send(lastMeasure, 200);
+   };
+   app.get(ApiPrefix, homeAPI);
   
-  var io = require('socket.io').listen(server);
-  if (process.env.NODE_ENV ==='production'){
-    //For Heroku
-    io.configure(function () {
-        io.set("transports", ["xhr-polling"]);
-        io.set("polling duration", 10);
-        io.set("log level", 1);
-    });
-  }
-
-  var mainSocket = {};
-  io.sockets.on('connection', function(socket) {
-    mainSocket = socket;
-
-    socket.on('movie-item', function(msg) {
-         console.log("movie-item", msg);
-         socket.broadcast.emit("new-item", msg);
-    });
-  });
+  
 
 
-  var SerialPort = require("serialport").SerialPort
-  var serialPort = new SerialPort("/dev/cu.usbmodem1411", {
+  var SerialPort = require("serialport").SerialPort;
+  //Reemplazalo con el tuyo :)
+  var port = "/dev/cu.usbmodemfa141";
+  var serialPort = new SerialPort(port, {
       baudrate: 9600
   });
+  var receivedData = '';
   serialPort.on("open", function() {
       console.log('Arudino online!');
       serialPort.on('data', function(data) {
           
 
-          var messureValue =  parseFloat(data);
-          if (messureValue) {
-            if (messureValue < 100) {
-              messureValue *= 10;
-            }
-            var obj = {};
-            obj.value = messureValue;
-            var messureModel = new messure(obj);
-            messureModel.save();
-          } else {
-            console.log(messureValue);
-          }
-          
+          receivedData += data.toString();
+          console.log(receivedData);
+          if (receivedData .indexOf('E') >= 0 && receivedData .indexOf('B') >= 0) {
+           // save the data between 'B' and 'E'
+             sendData = receivedData .substring(receivedData .indexOf('B') + 1, receivedData .indexOf('E'));
+             receivedData = '';
+             console.log('sending', sendData);
+               lastMeasure = {
+                value: sendData,
+                created: Date.now() 
+              };
+           }
 
       });
+
   });
     
     
