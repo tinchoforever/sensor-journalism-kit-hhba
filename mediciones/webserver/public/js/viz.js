@@ -31,7 +31,7 @@
   .range([0, width]);
 
   var y = d3.scale.linear()
-  .domain([-5, 500])
+  .domain([0, 60])
   .range([height, 0])
   .nice();
 
@@ -102,8 +102,18 @@
       
        // push a new data point onto the back
       data.push(data[data.length -1]);
-
-      // pop the old data point off the front
+    	var value = parseInt(data[data.length - 1]);
+		var $body = document.getElementById("temperatura");
+		if(value >= 40){
+			$body.className ='green';
+		}else if(value <= 15){
+			$body.className ='yellow';
+		}else{
+			$body.className = 'greenyellow';
+		}
+	
+	
+		// pop the old data point off the front
       data.shift();
 
       // transition the line

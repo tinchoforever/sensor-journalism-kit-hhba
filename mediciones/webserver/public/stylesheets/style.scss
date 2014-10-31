@@ -1,6 +1,6 @@
-@import "../components/bourbon/dist/bourbon";
 @import "../components/UtilityBelt/utility-belt";
 
+@import compass/css3
 @include font-face("Avenir Regular", "../fonts/AvenirNextLTPro-Regular");
 @include font-face("Avenir Bold", "../fonts/AvenirNextLTPro-Bold");
 @include font-face("Avenir Black", "../fonts/avenir-black");
@@ -76,7 +76,8 @@ body {
         font-size:              .5em;
         display:                inline-block; 
         font-family:            $font-family-bold;   
-    }
+		letter-spacing: 0px; 	
+	}
 }
 
 .referencia {
