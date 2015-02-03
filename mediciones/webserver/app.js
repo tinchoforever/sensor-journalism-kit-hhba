@@ -44,7 +44,7 @@
 
   var SerialPort = require("serialport").SerialPort;
   //Reemplazalo con el tuyo :)
-  var port = "/dev/ttyACM0";
+  var port = "/dev/cu.usbmodemfd1431";
   var serialPort = new SerialPort(port, {
       baudrate: 9600
   });
@@ -58,7 +58,7 @@
           console.log(receivedData);
           if (receivedData.indexOf('E') >= 0 && receivedData.indexOf('B') >= 0) {
            // save the data between 'B' and 'E'
-             sendData = receivedData .substring(receivedData.indexOf('B') + 1, receivedData .indexOf('E'));
+             sendData = receivedData.substring(receivedData.indexOf('B') + 1, receivedData .indexOf('E'));
              receivedData = '';
              console.log('sending', sendData);
                lastMeasure = {

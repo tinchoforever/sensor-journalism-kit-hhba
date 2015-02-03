@@ -118,7 +118,7 @@
 
       // transition the line
       path.transition()
-          .duration(1550)
+          .duration(500)
           .ease("linear")
           .attr("d", line)
           .each("end", function() { tick(path, line, data); });
