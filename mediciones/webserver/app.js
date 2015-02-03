@@ -21,8 +21,13 @@
   if ('development' == app.get('env')) {
   }
 
+
+
   router.init(app);
   var server =http.createServer(app);
+  app.get('/temperatura', function(req, res){
+	  res.render('temperatura');
+  });
   server.listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
   });
