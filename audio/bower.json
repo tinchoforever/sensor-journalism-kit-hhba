@@ -1,0 +1,21 @@
+{
+  "name": "sensors",
+  "version": "0.0.1",
+  "authors": [
+    "martin <martin.rabagglia@rga.com>",
+    "lucas <lucas.rudi@rga.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "private": true
+}

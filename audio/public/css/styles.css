@@ -1,0 +1,240 @@
+@import url('reset.css');
+@import url('icomoon.css');
+
+body {
+	padding:4px;
+	font-family: helvetica, arial, sans-serif;
+	font-weight: bold;
+	line-height: 1.5em;
+	color:#fff;
+}
+
+header {
+	background: #000;
+	margin-bottom:4px;
+	clear: both;
+	padding: 3em 2em;
+}
+
+.title {
+	max-width: 380px;
+	height: 35px;
+	background: transparent url('../images/logo.png') no-repeat center center;
+	margin: 0 auto;
+	background-size: 100%;
+}
+
+h1 {
+	font-size: 1.8em;
+}
+
+h2 {
+	font-size: 1.6em;
+}
+
+
+/* -------- Home */
+
+.page-home {
+
+}
+
+ ul.select-country {
+ 	width: 100%;
+ }
+
+ ul.select-country li {
+ 	width: 100%;
+ 	text-align: center;
+ 	font-size: 1.6em;
+ 	text-transform: uppercase;
+ 	padding: 1.8em;
+ 	margin-bottom: 2px;
+ 	cursor: pointer;
+ 	transition: opacity 0.3s ease; 
+ }
+
+ ul.select-country li:hover {
+ 	opacity: 0.8;
+ }
+
+.ny , .nyc {
+	background: #f8183b;
+}
+
+.au , .atx{
+	background: #f82810;
+}
+
+.la {
+	background: #f8385e;
+}
+
+.us {
+	background: #f8483a;
+}
+
+.ba {
+	background: #30b8d0;
+}
+
+.sy , .syd {
+	background: #225c9d;
+}
+
+.ln , .lnd {
+	background: #0f498a;
+}
+
+.sp {
+	background: #3db966;
+}
+
+
+.sk, .stk {
+	background: #323B7E;
+}
+.bc, .bcr {
+	background: #AE9411;
+}
+
+.great {
+	font-size: 1.9em;
+}
+
+.notGreat {
+	font-size: 1.5em;
+}
+
+/* -------- Check */
+
+.page-check {
+	padding: 5em 0;
+	text-align: center;
+	margin-bottom: 2px;
+}
+
+button.start {
+	background: none;
+	position: relative;
+	overflow: hidden;
+	border: none;
+	padding: 1.2em;
+	border-radius: 15px;
+	font-size: 1.1em;
+	color: #fff;
+	cursor: pointer;
+	margin: 1em auto;
+	width: 220px;
+	transition: opacity 0.3s ease; 
+}
+
+button.start .black {
+	position: absolute;
+	background: #000;
+	opacity: 0.3;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+button.start .white {
+	z-index: 2;
+	position: relative;
+	text-transform: uppercase;
+	font-family: helvetica, arial, sans-serif;
+	font-weight: bold;
+	text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+a {
+	text-decoration: none;
+	color:#FFFFFF;
+}
+
+button.start:hover {
+ 	opacity: 0.8;
+}
+
+.region {
+	animation: micro-anim 1.5s infinite;
+	-webkit-animation: micro-anim 1.5s infinite;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+}
+.container{
+	max-width: 100%;
+}
+.region .icon-micro {
+	font-size: 12em;
+}
+
+.region .icon-micro:before {
+	display: block;
+	text-align: center;
+}
+
+.region h2 {
+	text-align: center;
+	text-transform:  uppercase;
+}
+
+.decibels {
+	background: none;
+	position: relative;
+	padding: 1.2em;
+	border-radius: 15px;
+	border: 1px dotted #000;
+	font-size: 1.1em;
+	color: #000;
+	margin: 0.3em auto;
+	width: 220px;
+	opacity: 0.3;
+}
+
+
+@-webkit-keyframes micro-anim {
+    0% {opacity: 1;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+
+/* ------ Results */
+
+.page-result {
+	
+}
+
+ul.result-chart {
+	width: 40%;
+	display: inline-block;
+}
+
+ul.result-chart li {
+	margin-bottom: 2px;
+	color: #fff;
+	padding: 1em;
+	font-size: 1em;
+	text-transform: uppercase;
+	position: relative;
+}
+
+span.chart-number {
+	position: absolute;
+	right: 0.5em;
+	display: block;
+	opacity: 0.8;
+	top: 0.5em;
+	font-size: 2em;
+}
+
+.result-comments {
+	width: 50%;
+	display: inline-block;
+	color: #000;
+	vertical-align: top;
+	padding: 1.5em;
+	font-weight: normal;
+}

@@ -1,0 +1,13 @@
+<div class="page-result">
+	<ul class="result-chart">
+		<li class="animate-repeat" ng-repeat="item in liveVolume" ng-class="item._id.cityid">
+			{{item._id.city}}<span ng-class="item._id.cityid" class="chart-number">{{item.averageVolume | number:2}}</span></li>
+		</li>
+	</ul>
+	<div class="result-comments">
+		<p>
+			Well done <span class='great'> {{first._id.city}}  </span> you are quite active, <span class='notGreat'> {{last._id.city}} 
+			</span> you are too quiet,let's MAKE A NOISE!!
+		</p>
+	</div>
+</div>

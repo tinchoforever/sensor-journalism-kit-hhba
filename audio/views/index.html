@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>R/GA Global Noise Round</title>
+		 <meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    	<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+		<script src="/socket.io/socket.io.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="title"></div>
+		</header>
+		<div class="container">
+			<div ng-app="ssApp">
+				<div ng-view ></div>
+			</div>
+		</div>
+	</body>
+	
+	<script src="/bower_components/angular/angular.js"></script>
+	<script src="/bower_components/angular-route/angular-route.js"></script>
+	
+	<script src="/app/app.js"></script>
+	
+	<script src="/app/controllers/home.js"></script>
+	<script src="/app/controllers/capture.js"></script>
+	<script src="/app/controllers/live.js"></script>
+</html>
